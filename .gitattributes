@@ -1,1 +1,29 @@
 * text=auto !eol
+/AUTHORS -text
+/AUTHORS~ -text
+/COPYING -text
+/ChangeLog -text
+/INSTALL -text
+/Makefile.am -text
+/NEWS -text
+/README -text
+/aclocal.m4 -text
+/apertium-pt-gl.gl.dix -text
+/apertium-pt-gl.gl.tsx -text
+/apertium-pt-gl.post-gl.dix -text
+/apertium-pt-gl.post-pt.dix -text
+/apertium-pt-gl.pt-gl.dix -text
+/apertium-pt-gl.pt.dix -text
+/apertium-pt-gl.pt.tsx -text
+/apertium-pt-gl.trules-gl-pt.xml -text
+/apertium-pt-gl.trules-pt-gl.xml -text
+/autogen.sh -text
+/config.in -text
+/configure.ac -text
+/gl-pt-latin1.prob -text svneol=unset#unset
+/gl-pt.prob -text svneol=unset#unset
+/install-sh -text
+/missing -text
+/modes.xml -text
+/pt-gl-latin1.prob -text svneol=unset#unset
+/pt-gl.prob -text svneol=unset#unset
