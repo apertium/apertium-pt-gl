@@ -7,15 +7,15 @@
 /NEWS -text
 /README -text
 /aclocal.m4 -text
+/apertium-pt-gl.gl-pt.t1x -text
 /apertium-pt-gl.gl.dix -text
 /apertium-pt-gl.gl.tsx -text
 /apertium-pt-gl.post-gl.dix -text
 /apertium-pt-gl.post-pt.dix -text
 /apertium-pt-gl.pt-gl.dix -text
+/apertium-pt-gl.pt-gl.t1x -text
 /apertium-pt-gl.pt.dix -text
 /apertium-pt-gl.pt.tsx -text
-/apertium-pt-gl.trules-gl-pt.xml -text
-/apertium-pt-gl.trules-pt-gl.xml -text
 /autogen.sh -text
 /config.in -text
 /configure.ac -text
