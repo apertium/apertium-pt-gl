@@ -2,7 +2,6 @@
 /AUTHORS -text
 /COPYING -text
 /ChangeLog -text
-/INSTALL -text
 /Makefile.am -text
 /NEWS -text
 /README -text
@@ -20,8 +19,6 @@
 /configure.ac -text
 /gl-pt-latin1.prob -text svneol=unset#unset
 /gl-pt.prob -text svneol=unset#unset
-/install-sh -text
-/missing -text
 /modes.xml -text
 /pt-gl-latin1.prob -text svneol=unset#unset
 /pt-gl.prob -text svneol=unset#unset
