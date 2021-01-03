@@ -10,3 +10,7 @@
 /configure
 /modes
 /stamp-h1
+/INSTALL
+/ap_include.am
+/install-sh
+/missing

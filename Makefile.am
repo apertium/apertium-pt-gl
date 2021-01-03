@@ -1,4 +1,3 @@
-VERSION=0.9.2
 LANG1=pt
 LANG2=gl
 PREFIX1=$(LANG1)-$(LANG2)
@@ -8,9 +7,11 @@ BASENAME=apertium-$(PREFIX1)
 
 TARGETS_COMMON = $(PREFIX1).automorf.bin $(PREFIX1).autobil.bin $(PREFIX1).autogen.bin \
      $(PREFIX1).autopgen.bin $(PREFIX2).automorf.bin $(PREFIX2).autobil.bin \
-     $(PREFIX2).autogen.bin $(PREFIX2).autopgen.bin $(PREFIX1).t1x.bin $(PREFIX2).t1x.bin $(MODES) 
+     $(PREFIX2).autogen.bin $(PREFIX2).autopgen.bin $(PREFIX1).t1x.bin $(PREFIX2).t1x.bin $(MODES)
 
-TARGETS = $(TARGETS_COMMON) 
+TARGETS = $(TARGETS_COMMON)
+
+@ap_include@
 
 $(PREFIX1).automorf.bin: $(BASENAME).$(LANG1).dix
 	apertium-validate-dictionary $(BASENAME).$(LANG1).dix
@@ -62,30 +63,20 @@ EXTRA_DIST=$(BASENAME).$(LANG1).dix $(BASENAME).$(PREFIX1).dix \
 	   $(PREFIX1)-latin1.prob $(PREFIX2)-latin1.prob \
 	   modes.xml
 
+noinst_DATA=modes/$(PREFIX1).mode
+
 apertium_pt_gldir=$(prefix)/share/apertium/apertium-$(PREFIX1)/
-apertium_pt_modesdir=$(prefix)/share/apertium/modes/
+
 apertium_pt_gl_DATA=$(PREFIX1).automorf.bin $(PREFIX2).automorf.bin \
 		    $(PREFIX1).autobil.bin $(PREFIX2).autobil.bin \
 		    $(PREFIX1).autogen.bin $(PREFIX2).autogen.bin \
 		    $(PREFIX1).autopgen.bin $(PREFIX2).autopgen.bin \
 		    $(PREFIX1).prob $(PREFIX2).prob \
 		    $(PREFIX1).t1x.bin \
-		    $(PREFIX2).t1x.bin $(PREFIX1).mode $(PREFIX2).mode
+		    $(PREFIX2).t1x.bin \
+		    $(BASENAME).$(PREFIX1).t1x \
+		    $(BASENAME).$(PREFIX2).t1x
 
-$(PREFIX1).mode: modes.xml
-	apertium-gen-modes modes.xml
-	cp *.mode modes/
-
-$(PREFIX2).mode: modes.xml
-	apertium-gen-modes modes.xml
-	cp *.mode modes/
-
-install-data-local:
-	apertium-gen-modes modes.xml apertium-$(PREFIX1)
-	test -d $(DESTDIR)$(apertium_pt_modesdir) || mkdir $(DESTDIR)$(apertium_pt_modesdir)
-	$(INSTALL_DATA) $(PREFIX1).mode $(DESTDIR)$(apertium_pt_modesdir)
-	$(INSTALL_DATA) $(PREFIX2).mode $(DESTDIR)$(apertium_pt_modesdir)
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX1).t1x $(DESTDIR)$(apertium_pt_gldir)
-	$(INSTALL_DATA) $(BASENAME).$(PREFIX2).t1x $(DESTDIR)$(apertium_pt_gldir)
+install-data-local: install-modes
 
 CLEANFILES = -rf $(TARGETS_COMMON) modes 
