@@ -80,3 +80,6 @@ apertium_pt_gl_DATA=$(PREFIX1).automorf.bin $(PREFIX2).automorf.bin \
 install-data-local: install-modes
 
 CLEANFILES = -rf $(TARGETS_COMMON) modes 
+
+test: all
+	apertium-regtest test

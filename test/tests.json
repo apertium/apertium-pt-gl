@@ -1,0 +1,10 @@
+{
+    "gl-pt": {
+        "input": "gl-pt-input.txt",
+        "mode": "gl-pt"
+    },
+    "pt-gl": {
+        "input": "pt-gl-input.txt",
+        "mode": "pt-gl"
+    }
+}

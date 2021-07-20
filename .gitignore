@@ -14,3 +14,12 @@
 /ap_include.am
 /install-sh
 /missing
+/*.hfst
+/*.gz
+/*.pc
+/*.zhfst
+/.DS_Store
+/*-*.prob
+/.deps
+/config.in
+/test/*-output.txt
